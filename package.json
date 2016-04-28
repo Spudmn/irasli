@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "name": "irasli",
+  "version": "0.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pminnieur/irasli.git"
+  },
+  "dependencies": {
+    "johnny-five": "^0.9.44"
+  },
+  "scripts": {}
+}
