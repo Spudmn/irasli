@@ -10,6 +10,7 @@
   "main": "irasli.js",
   "dependencies": {
     "johnny-five": "^0.9.44",
+    "lodash": "^4.11.1",
     "node-pixel": "^0.6.1",
     "nodejs-websocket": "^1.5.0"
   },

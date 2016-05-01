@@ -40,8 +40,6 @@ kutu.prototype.connect = function() {
 }
 
 kutu.prototype.onopen = function() {
-    console.log('connect', arguments)
-
     for (let key in this.data) {
         delete this.data[key]
     }
@@ -95,7 +93,6 @@ kutu.prototype.ontext = function(data) {
 }
 
 kutu.prototype.onclose = function() {
-    console.log('close', arguments)
     this.ws.onopen = this.ws.onmessage = this.ws.onclose = null;
 
     if (this.connected) {
