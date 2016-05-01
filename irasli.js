@@ -47,7 +47,7 @@ board.on('ready', function() {
             first = null,
             last = null,
             idle = null,
-            max = null
+            red = null
 
         let blinking = false,
             limiter  = false
@@ -60,7 +60,7 @@ board.on('ready', function() {
                 first = ir.data.DriverInfo.DriverCarSLFirstRPM
                 last  = ir.data.DriverInfo.DriverCarSLLastRPM
                 idle  = ir.data.DriverInfo.DriverCarIdleRPM
-                max   = ir.data.DriverInfo.DriverCarRedLine
+                red   = ir.data.DriverInfo.DriverCarRedLine
             }
 
             if (_.indexOf(keys, 'EngineWarnings') >= 0) {
@@ -97,7 +97,7 @@ board.on('ready', function() {
                 }
             }
 
-            if (!last || !first || !blink || !max) {
+            if (!last || !first || !blink || !red) {
                 return
             }
 
@@ -116,7 +116,7 @@ board.on('ready', function() {
                 strip.show()
             }
 
-            const percent = rpm / max * 100
+            const percent = rpm / red * 100
             for (let threshold in config) {
                 if (percent >= threshold) {
                     _.forEach(config[threshold].pins, function(pixel) {
